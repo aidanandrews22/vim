@@ -7,7 +7,7 @@ local lspconfig = require("lspconfig")
 
 local servers = {
   "pyright",
-  "ruff_lsp",
+  "ruff",
 }
 
 for _, lsp in ipairs(servers) do

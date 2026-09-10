@@ -12,6 +12,18 @@ g.transparency = config.ui.transparency
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
+vim.g.clipboard = {
+  name = "xclip",
+  copy = {
+    ["+"] = "DISPLAY=${DISPLAY:-:0} xclip -selection clipboard",
+    ["*"] = "DISPLAY=${DISPLAY:-:0} xclip -selection clipboard",
+  },
+  paste = {
+    ["+"] = "DISPLAY=${DISPLAY:-:0} xclip -selection clipboard -o",
+    ["*"] = "DISPLAY=${DISPLAY:-:0} xclip -selection clipboard -o",
+  },
+  cache_enabled = 0,
+}
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
 
